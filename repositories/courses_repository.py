@@ -18,6 +18,12 @@ class CoursesRepository:
 
         return course
 
+    async def update_course(self, course_code, field, data):
+        return await self.collection.update_one(
+            {"course_code": course_code},
+            {"$set": {field: data}}
+
+        )
 
     async def delete(self, course_code: str):
         return await self.collection.delete_one({'course_code': course_code})

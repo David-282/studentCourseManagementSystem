@@ -14,7 +14,7 @@ class FacilitatorsRepository:
     async def save(self,facilitator):
         return await self.collection.insert_one(facilitator)
 
-    # 5
+
     async def delete(self, facilitator_id: str):
         return await self.collection.delete_one({'facilitator_id': facilitator_id})
 

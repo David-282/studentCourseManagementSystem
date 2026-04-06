@@ -34,12 +34,10 @@ async def create_course(course:CourseCreate):
         "message": "Course created successfully",
         "course_code": new_course.course_code,
         "facilitator": {
-            "name": facilitator["facilitator_name"],
+            "name": facilitator["name"],
             "id": facilitator["facilitator_id"]
         }
     }
-
-
 
 async def register_facilitator(facilitator:FacilitatorCreate):
     existing = await facilitator_repo.find_by_email(facilitator.email)
@@ -103,6 +101,23 @@ async def assign_grade_to_student(grade_assignment: AssignGradeSchema):
         student["grades"]
     )
     return {"message": "Grade assigned successfully"}
+
+
+async def view_student_result(facilitator_id: str, student_id: str, course_code: str):
+    await validate_facilitator(facilitator_id)
+
+    course = await validate_course(course_code)
+
+    if course["facilitator_id"] != facilitator_id:
+        raise HTTPException(status_code=403, detail="Facilitator does not handle this course")
+
+    student = await validate_student(student_id)
+
+    for grade in student["grades"]:
+        if grade["course_code"] == course_code:
+            return {"result": grade}
+
+    raise HTTPException(status_code=404, detail="No grade found for this student in this course")
 
 async def validate_facilitator(facilitator_id: str):
     facilitator = await facilitator_repo.find_by_id(facilitator_id)
