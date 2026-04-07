@@ -1,0 +1,11 @@
+[project]
+name = "studentcoursemanagementsystem"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.135.3",
+    "pymongo>=4.16.0",
+    "uvicorn>=0.43.0",
+]

@@ -1,0 +1,103 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram id="wvnKaA4NLKzFWRzjNtOg" name="Uml Class Diagram">
+    <mxGraphModel dx="1426" dy="912" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="User" parent="1" style="swimlane;startSize=40;align=center;fontSize=12;html=1;" value="&lt;b&gt;User&lt;/b&gt;" vertex="1">
+          <mxGeometry height="172" width="180" x="320" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="User_a0" parent="User" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- user_id: str" vertex="1">
+          <mxGeometry height="24" width="180" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="User_a1" parent="User" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- name: str" vertex="1">
+          <mxGeometry height="24" width="180" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="User_a2" parent="User" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- email: str" vertex="1">
+          <mxGeometry height="24" width="180" y="94" as="geometry" />
+        </mxCell>
+        <mxCell id="User_a3" parent="User" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- role: Role" vertex="1">
+          <mxGeometry height="24" width="180" y="118" as="geometry" />
+        </mxCell>
+        <mxCell id="User_a4" parent="User" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- phone_number: str" vertex="1">
+          <mxGeometry height="24" width="180" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="Role" parent="1" style="swimlane;startSize=40;align=center;fontSize=12;html=1;" value="&amp;lt;&amp;lt;enum&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Role&lt;/b&gt;" vertex="1">
+          <mxGeometry height="100" width="180" x="700" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Role_a0" parent="Role" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="STUDENT" vertex="1">
+          <mxGeometry height="24" width="180" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="Role_a1" parent="Role" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="FACILITATOR" vertex="1">
+          <mxGeometry height="24" width="180" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Student" parent="1" style="swimlane;startSize=30;align=center;fontSize=12;html=1;" value="&lt;b&gt;Student&lt;/b&gt;" vertex="1">
+          <mxGeometry height="114" width="224" x="80" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="Student_a0" parent="Student" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- role: Role = STUDENT" vertex="1">
+          <mxGeometry height="24" width="224" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="Student_a1" parent="Student" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- courses_offered: List[str]" vertex="1">
+          <mxGeometry height="24" width="224" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Student_a2" parent="Student" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- grades: List[Grade]" vertex="1">
+          <mxGeometry height="24" width="224" y="84" as="geometry" />
+        </mxCell>
+        <mxCell id="Facilitator" parent="1" style="swimlane;startSize=30;align=center;fontSize=12;html=1;" value="&lt;b&gt;Facilitator&lt;/b&gt;" vertex="1">
+          <mxGeometry height="90" width="210" x="600" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="Facilitator_a0" parent="Facilitator" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- role: Role = FACILITATOR" vertex="1">
+          <mxGeometry height="24" width="210" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="Facilitator_a1" parent="Facilitator" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- facilitator_id: str" vertex="1">
+          <mxGeometry height="24" width="210" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Grade" parent="1" style="swimlane;startSize=30;align=center;fontSize=12;html=1;" value="&lt;b&gt;Grade&lt;/b&gt;" vertex="1">
+          <mxGeometry height="114" width="231" x="80" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="Grade_a0" parent="Grade" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- course_code: str" vertex="1">
+          <mxGeometry height="24" width="231" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="Grade_a1" parent="Grade" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- course_grade: Optional[str]" vertex="1">
+          <mxGeometry height="24" width="231" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Grade_a2" parent="Grade" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- course_score: Optional[int]" vertex="1">
+          <mxGeometry height="24" width="231" y="84" as="geometry" />
+        </mxCell>
+        <mxCell id="Course" parent="1" style="swimlane;startSize=30;align=center;fontSize=12;html=1;" value="&lt;b&gt;Course&lt;/b&gt;" vertex="1">
+          <mxGeometry height="162" width="259" x="560" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="Course_a0" parent="Course" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- course_code: str" vertex="1">
+          <mxGeometry height="24" width="259" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="Course_a1" parent="Course" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- course_title: str" vertex="1">
+          <mxGeometry height="24" width="259" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Course_a2" parent="Course" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- course_description: str" vertex="1">
+          <mxGeometry height="24" width="259" y="84" as="geometry" />
+        </mxCell>
+        <mxCell id="Course_a3" parent="Course" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- facilitator_id: str" vertex="1">
+          <mxGeometry height="24" width="259" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="Course_a4" parent="Course" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- students_offering_id: List[str]" vertex="1">
+          <mxGeometry height="24" width="259" y="132" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="Student" style="endArrow=block;endFill=0;startArrow=none;jettySize=auto;orthogonalLoop=1;rounded=0;" target="User" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="Facilitator" style="endArrow=block;endFill=0;startArrow=none;jettySize=auto;orthogonalLoop=1;rounded=0;" target="User" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="Student" style="endArrow=open;startArrow=none;dashed=1;jettySize=auto;orthogonalLoop=1;rounded=0;" target="Grade" value="has">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="Course" style="endArrow=open;startArrow=none;dashed=1;jettySize=auto;orthogonalLoop=1;rounded=0;" target="Facilitator" value="assigned by">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="Course" style="endArrow=open;startArrow=none;dashed=1;jettySize=auto;orthogonalLoop=1;rounded=0;" target="Student" value="enrolls">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
