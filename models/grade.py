@@ -1,7 +1,9 @@
-from typing import Optional
-from pydantic import BaseModel
+from enum import Enum
 
-class Grade(BaseModel):
-    course_code: str
-    course_grade: Optional[str] = None
-    course_score: Optional[int] = None
+
+class Grade(str,Enum):
+     A = 'A',
+     B = 'B',
+     C = 'C',
+     D = 'D',
+     F = 'F'

@@ -10,4 +10,5 @@ db = client["school_management_database"]
 students_collection = db["students"]
 courses_collection = db["courses"]
 facilitators_collection = db["facilitators"]
+enrollments_collection = db["enrollments"]
 

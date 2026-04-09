@@ -6,4 +6,3 @@ class AssignGradeSchema(BaseModel):
     course_code:str
     student_id:str
     course_grade: str
-    course_score: float

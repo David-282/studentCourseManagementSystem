@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
 
-class RegisterCourseSchema(BaseModel):
+class EnrollForCourse(BaseModel):
     course_code:str
     student_id:str

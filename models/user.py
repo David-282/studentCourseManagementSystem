@@ -10,5 +10,3 @@ class User(BaseModel):
     email:str
     role:Role
     phone_number:str
-
-

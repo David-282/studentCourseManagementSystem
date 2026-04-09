@@ -1,7 +1,7 @@
 from fastapi import  APIRouter
 
 from schemas.create_student import CreateStudentSchema
-from schemas.register_course import RegisterCourseSchema
+from schemas.enroll_for_course import EnrollForCourse
 from services import student_services
 
 router = APIRouter()
@@ -15,8 +15,8 @@ async def register_student(student: CreateStudentSchema):
 
 
 @router.post("/register_course")
-async def register_course(course:RegisterCourseSchema):
-    return await student_services.register_for_course(course)
+async def register_course(course:EnrollForCourse):
+    return await student_services.enroll_course(course)
 
 
 @router.get("/view_student_details")

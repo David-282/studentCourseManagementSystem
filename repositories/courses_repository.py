@@ -18,10 +18,10 @@ class CoursesRepository:
 
         return course
 
-    async def update_course(self, course_code, field, data):
+    async def update_course(self, course_code,course:dict):
         return await self.collection.update_one(
             {"course_code": course_code},
-            {"$set": {field: data}}
+            {"$set": course}
 
         )
 

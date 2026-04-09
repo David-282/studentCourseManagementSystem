@@ -14,14 +14,13 @@ class StudentRepository:
     async def save(self,student):
         return await self.collection.insert_one(student)
 
-    # 5
     async def delete(self, student_id: str):
         return await self.collection.delete_one({'student_id': student_id})
 
-    async def update_student (self,student_id,field, data):
+    async def update_student (self,student_id,student:dict):
         return await self.collection.update_one(
             {"student_id": student_id},
-            {"$set":{field:data}}
+            {"$set":student}
 
         )
 

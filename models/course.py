@@ -8,4 +8,3 @@ class Course(BaseModel):
     course_description: str
     course_code: str
     facilitator_id: str
-    students_offering_id: List[str]= []

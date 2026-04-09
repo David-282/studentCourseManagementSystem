@@ -8,9 +8,8 @@ from models.user import User
 
 
 class Student(User):
-    role:Role = Role.STUDENT
-    courses_offered: List[str]= []
-    grades: List[Grade] = []
     student_id:str
+    role:Role = Role.STUDENT
+
 
 
