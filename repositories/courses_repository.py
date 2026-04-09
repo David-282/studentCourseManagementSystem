@@ -9,7 +9,10 @@ class CoursesRepository:
         return await self.collection.find_one({'course_code': course_code})
 
     async def find_by_facilitator_id(self, facilitator_id: str):
-        return await self.collection.find({"facilitator_id": facilitator_id}).to_list(length=None)
+        courses = await self.collection.find({"facilitator_id": facilitator_id}).to_list(length=None)
+        return {
+            "courses":[course["course_code"] for course in courses]
+        }
 
     async def save(self, course):
         saved_course = await self.collection.insert_one(course)

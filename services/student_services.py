@@ -46,7 +46,7 @@ async def enroll_course(enroll_for_course:EnrollForCourse):
     if course is None:
         raise HTTPException(status_code=404, detail="Course not found")
 
-    enrollment = await enrollment_repo.find_by_course_id_and_student_id(enroll_for_course.course_code, enroll_for_course.student_id)
+    enrollment = await enrollment_repo.find_by_course_code_and_student_id(enroll_for_course.course_code, enroll_for_course.student_id)
     if enrollment is not None:
         raise HTTPException(status_code= 409, detail="Student is already offering this course.")
 
@@ -81,4 +81,4 @@ async def view_courses_offering(student_id: str):
         raise HTTPException(status_code=404, detail="Student not found")
 
     enrollments = await enrollment_repo.find_by_student_id(student_id)
-    return {"courses": [enrollment["course_id"] for enrollment in enrollments]}
+    return {"courses": [enrollment["course_code"] for enrollment in enrollments]}

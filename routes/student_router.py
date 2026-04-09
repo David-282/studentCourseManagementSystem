@@ -2,7 +2,7 @@ from fastapi import  APIRouter
 
 from schemas.create_student import CreateStudentSchema
 from schemas.enroll_for_course import EnrollForCourse
-from services import student_services
+from services import student_services, facilitator_services
 
 router = APIRouter()
 
@@ -31,4 +31,4 @@ async def view_courses(student_id:str):
 
 @router.get("/view_student_grades")
 async def view_student_grades(student_id:str):
-    return await student_services.view_results(student_id)
+    return await facilitator_services .view_student_result(student_id)

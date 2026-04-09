@@ -16,9 +16,9 @@ class EnrollmentRepository:
     async def delete(self, enrollment_id: str):
         return await self.collection.delete_one({'enrollment_id': enrollment_id})
 
-    async def find_by_course_id_and_student_id(self, course_id: str,student_id:str):
+    async def find_by_course_code_and_student_id(self, course_code: str, student_id:str):
 
-        return await self.collection.find_one({"course_id": course_id, "student_id": student_id})
+        return await self.collection.find_one({"course_code": course_code , "student_id": student_id})
 
     async def update(self,_id:str, course_grade:str):
         return await self.collection.update_one(

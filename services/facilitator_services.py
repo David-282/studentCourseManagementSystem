@@ -92,7 +92,7 @@ async def assign_grade_to_student(grade_assignment: AssignGradeSchema):
     if course['facilitator_id'] != grade_assignment.facilitator_id:
         raise HTTPException(status_code=403, detail="Facilitator does not handle this course")
 
-    enrollment = await  enrollment_repo.find_by_course_id_and_student_id(grade_assignment.course_code, grade_assignment.student_id)
+    enrollment = await  enrollment_repo.find_by_course_code_and_student_id(grade_assignment.course_code, grade_assignment.student_id)
     if enrollment is None:
         raise HTTPException(status_code=404, detail="Student does not offer course")
 
@@ -111,7 +111,7 @@ async def view_student_result(facilitator_id: str, student_id: str, course_code:
 
     student = await validate_student(student_id)
 
-    enrollment = await enrollment_repo.find_by_course_id_and_student_id(course_code, student_id)
+    enrollment = await enrollment_repo.find_by_course_code_and_student_id(course_code, student_id)
 
     return {
         "student_id": enrollment["student_id"],

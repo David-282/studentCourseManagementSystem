@@ -19,7 +19,7 @@ async def create_course(course:CourseCreate):
 
 @router.get("/view_course_facilitator_handles")
 async def view_course_facilitator_handles(facilitator_id:str):
-    return await facilitator_services.view_courses_handling(facilitator_id)
+    return await facilitator_services.view_courses_handling(facilitator_id,)
 
 
 @router.get("/view_student_offering_course")
